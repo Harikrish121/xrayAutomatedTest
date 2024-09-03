@@ -1,25 +1,35 @@
 package jira.panasa_Art;
 
-import org.junit.Assert;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class AppTest {
 
-	int num = 10;
+	int num = 20;
 	int secNum = 20;
+	String expected = "Hari";
+	String actual = "Hari";
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		System.out.println("class Started");
 	}
 
-	@org.junit.Test
+	@Test
 	public void addNumEquals() {
-		Assert.assertEquals("as expected", num, 10);
+
+		Assertions.assertEquals(num, secNum);
 	}
 
-	@org.junit.Test
+	@Test
 	public void assertEquals() {
-		Assert.assertEquals("as expected", secNum, 20);
+		Assertions.assertEquals(expected, actual, "Strings should be equal");
+	}
+
+	@AfterEach
+	public void tearDown() {
+		System.out.println("Class Ended");
 	}
 }
